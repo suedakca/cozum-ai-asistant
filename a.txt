@@ -1,0 +1,92 @@
+1. Eğitim Programı ve Müfredat
+2. Sınav Hazılığı
+3. Sosyal ve Sportif Faaliyetler
+4.  Ulaşım ve Servisler
+5. Yemek ve Kantin
+6. Güvenlik ve Sağlık(revir vs.)
+7. Teknoloji ve Dijital Altyapı
+8. Rehberlik ve Psikolojik Destek
+9.Fiziksel Mekan ve Tesisler
+10.Fiziksel Mekan ve Tesisler
+11.Mezuniyet ve Başarılar
+
+
+1. Eğitim Programı ve Müfredat
+Hangi eğitim sistemi kullanılıyor? (MEB, IB, Cambridge vb.)
+Ders saatleri nasıl?
+Seçmeli dersler neler?
+Yabancı dil eğitimi nasıl? (Hangi diller, kaç saat?)
+STEM/Robotik/Kodlama programları var mı?
+
+2. Sınav ve Değerlendirme
+Sınav sistemi nasıl işliyor?
+LGS/YKS hazırlık programları var mı?
+Karne ve not sistemi nasıl?
+Veli-öğretmen görüşmeleri ne sıklıkta?
+Online sınav sonuçlarına nasıl erişilir?
+
+
+4. Sosyal ve Sportif Faaliyetler
+Hangi spor branşları var?
+Kulüp çalışmaları neler?
+Yaz okulu/kamp programları?
+Müzik/sanat eğitimleri?
+Okul gezileri ve etkinlikler?
+
+
+
+6. Yemek ve Kantin
+Yemek menüleri nasıl?
+Diyet/alerjik öğrenciler için seçenekler?
+Kantin ürünleri neler?
+Yemek ücreti dahil mi?
+
+7. Güvenlik ve Sağlık
+Okul güvenlik önlemleri neler?
+Revir/sağlık ekibi var mı?
+Acil durum protokolleri?
+Kamera sistemi var mı?
+Covid/salgın önlemleri?
+
+8. Teknoloji ve Dijital Altyapı
+Online eğitim platformu var mı?
+Ödev takip sistemi?
+Veli bilgilendirme uygulaması?
+Tablet/bilgisayar kullanımı?
+İnternet güvenliği politikaları?
+
+9. Rehberlik ve Psikolojik Destek
+Rehberlik servisi var mı?
+Psikolog desteği?
+Kariyer danışmanlığı?
+Özel eğitim desteği?
+Oryantasyon programları?
+
+10. Fiziksel Mekan ve Tesisler
+Sınıf mevcutları kaç kişi?
+Laboratuvarlar var mı?
+Kütüphane kullanımı?
+Spor salonu/açık alan?
+Kafeterya/yemekhane kapasitesi?
+
+11. İletişim ve Bilgilendirme
+Veli ile nasıl iletişim kurulur?
+Acil durumlarda kimle görüşülür?
+Devamsızlık bildirimi nasıl yapılır?
+Şikayet/öneri mekanizması?
+Sosyal medya hesapları?
+
+
+
+13. Etkinlik ve Haberler (Asistan için kritik) not: (Hangi senaryolarda web sitesi ve instagram referans olarak gösterilmeli bu çok elzemdir. bu senoryalara çalışmanız gerekmektedir.)
+Yaklaşan etkinlikler neler?
+Geçmiş etkinlikler?
+Okul haberleri ve duyurular?
+Tatil takvimi?
+Veli toplantıları ne zaman?
+
+14. Mezuniyet ve Başarılar
+Mezun yerleştirme oranları?
+Üniversite kabulleri?
+Olimpiyat/yarışma başarıları?
+Mezun takip sistemi var mı?
