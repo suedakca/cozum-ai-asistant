@@ -18,17 +18,17 @@ def retrieve_node(state: ChatState) -> ChatState:
         Updated state with retrieved context
     """
     query = state["user_query"]
-    active_levels = state.get("active_levels", list(SUPPORTED_LEVELS))
+    active_level = state.get("active_level", "anaokulu")
     
     print(f"\n📚 [RETRIEVE NODE] FAISS'ten doküman getiriliyor...")
     print(f"   Query: '{query}'")
-    print(f"   Levels: {active_levels}")
+    print(f"   Level: {active_level}")
     
     # Retrieve documents from FAISS
     retrieved_docs = get_retrieved_documents(
         query,
         k=4,
-        levels=active_levels,
+        levels=[active_level],
         force_recreate=False,
         silent=True  # Production mode
     )

@@ -179,7 +179,7 @@ EDUxLab atölyeleri haftada 2 saat olarak uygulanmaktadır. Proje tabanlı öğr
         intent="education",
         intent_confidence=0.95,
         intent_reasoning="Test",
-        active_levels=["anaokulu"],
+        active_level="anaokulu",
         retrieved_context=test_context,
         final_answer=None,
         error=None

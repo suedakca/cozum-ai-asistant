@@ -71,7 +71,7 @@ def answer_node(state: ChatState, llm: ChatGoogleGenerativeAI) -> ChatState:
     intent = state.get("intent", "unknown")
     query = state["user_query"]
     context = state.get("retrieved_context", "")
-    active_levels = state.get("active_levels", [])
+    active_level = state.get("active_level", "anaokulu")
     
     print(f"\n💬 [ANSWER NODE] Final yanıt oluşturuluyor...")
     print(f"   Intent: {intent}")
@@ -104,7 +104,7 @@ Kayıt ve ücret konusundaki tüm detayları size aktaracaklardır."""
         return state
     
     # Education/Event intents - LLM ile yanıt oluştur
-    active_levels_str = ", ".join(active_levels).title() if active_levels else "Tüm kademeler"
+    active_level_str = active_level.title() if active_level else "Anaokulu"
     
     # Build minimal system prompt (context OLMADAN - multi-turn için)
     minimal_system_prompt = build_minimal_system_prompt(
@@ -112,7 +112,7 @@ Kayıt ve ücret konusundaki tüm detayları size aktaracaklardır."""
         style_guide=get_style_guide(),
         context_rules=get_context_rules(),
         output_format=get_output_format(),
-        active_levels=active_levels_str
+        active_level=active_level_str
     )
     
     # Get conversation history (sliding window)

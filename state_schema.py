@@ -26,8 +26,8 @@ class ChatState(TypedDict):
     intent_confidence: Optional[float]
     intent_reasoning: Optional[str]
     
-    # Active education levels
-    active_levels: List[str]  # ["anaokulu", "ilkokul", "ortaokul", "lise"]
+    # Active education level
+    active_level: str  # "anaokulu", "ilkokul", "ortaokul", "lise" (default: "anaokulu")
     
     # Context compression control
     compress_context: bool  # True = compress retrieved context, False = use full context
@@ -44,8 +44,8 @@ class ChatState(TypedDict):
 
 def create_initial_state(
     user_query: str,
-    active_levels: List[str],
-    messages: List[BaseMessage],
+    active_level: str = "anaokulu",
+    messages: List[BaseMessage] = None,
     compress_context: bool = False  # Default: compress OFF (full context for quality)
 ) -> ChatState:
     """
@@ -53,20 +53,23 @@ def create_initial_state(
     
     Args:
         user_query: Kullanıcının sorusu
-        active_levels: Seçili eğitim kademeleri
+        active_level: Seçili eğitim kademesi (varsayılan: "anaokulu")
         messages: Conversation history (LangChain messages)
         compress_context: Context compression açık mı? (True = compress, False = full)
     
     Returns:
         ChatState: Initial state
     """
+    if messages is None:
+        messages = []
+        
     return ChatState(
         messages=messages,
         user_query=user_query,
         intent=None,
         intent_confidence=None,
         intent_reasoning=None,
-        active_levels=active_levels,
+        active_level=active_level,
         compress_context=compress_context,
         retrieved_context=None,
         final_answer=None,

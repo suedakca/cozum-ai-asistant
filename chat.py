@@ -66,22 +66,22 @@ class ChatSession:
     def __init__(self, llm: ChatGoogleGenerativeAI, checkpointer: InMemorySaver = None, compress_context: bool = False):
         self.llm = llm
         self.checkpointer = checkpointer or InMemorySaver()
-        self.levels = None  # Seçili eğitim kademeleri
+        self.level = "anaokulu"  # Seçili eğitim kademesi (Default: anaokulu)
         self.thread_id = "default"
         self.compress_context = compress_context  # Context compression control (A/B test için - DEFAULT: OFF)
         
         # LangGraph workflow oluştur
         self.workflow = create_workflow(self.llm, self.checkpointer)
     
-    def set_levels(self, levels: list[str]):
+    def set_level(self, level: str):
         """
-        Eğitim kademelerini ayarla.
+        Eğitim kademesini ayarla.
         
         Args:
-            levels: Seçili kademe listesi (örn: ["anaokulu", "lise"])
+            level: Seçili kademe (örn: "anaokulu", "lise")
         """
-        self.levels = levels
-        print(f"\n✅ Kademe güncellendi: {', '.join(levels)}")
+        self.level = level
+        print(f"\n✅ Kademe güncellendi: {level}")
     
     def clear_history(self):
         """Sohbet geçmişini temizle - yeni thread ID oluştur."""
@@ -110,8 +110,8 @@ class ChatSession:
             Final answer string
         """
         try:
-            # Active levels
-            active_levels = self.levels if self.levels else list(SUPPORTED_LEVELS)
+            # Active level
+            active_level = self.level if self.level else "anaokulu"
             
             # Get conversation history from checkpointer
             config = {"configurable": {"thread_id": self.thread_id}}
@@ -129,7 +129,7 @@ class ChatSession:
             # Create initial state
             initial_state = create_initial_state(
                 user_query=user_query,
-                active_levels=active_levels,
+                active_level=active_level,
                 messages=messages,
                 compress_context=self.compress_context  # A/B test için
             )
@@ -137,7 +137,7 @@ class ChatSession:
             print(f"\n" + "="*80)
             print(f"💬 [CHAT SESSION] Yeni soru işleniyor")
             print(f"   Thread ID: {self.thread_id}")
-            print(f"   Aktif kademeler: {active_levels}")
+            print(f"   Aktif kademe: {active_level}")
             print(f"   Mesaj geçmişi: {len(messages)} mesaj")
             print(f"   🗜️  Context Compression: {'ON' if self.compress_context else 'OFF'}")
             print("="*80)
@@ -175,7 +175,7 @@ if __name__ == "__main__":
     
     # Test 1: Greeting
     print("\n" + "🟢 TEST 1: GREETING".center(80, "="))
-    session.set_levels(["anaokulu"])
+    session.set_level("anaokulu")
     response1 = session.chat("Merhaba")
     print(f"\n📝 Yanıt:\n{response1}\n")
     
@@ -196,7 +196,7 @@ if __name__ == "__main__":
     
     # Test 5: Level change
     print("\n" + "🟢 TEST 5: LEVEL CHANGE".center(80, "="))
-    session.set_levels(["lise"])
+    session.set_level("lise")
     response5 = session.chat("İngilizce eğitimi nasıl?")
     print(f"\n📝 Yanıt:\n{response5}\n")
     

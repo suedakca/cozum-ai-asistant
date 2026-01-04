@@ -25,7 +25,7 @@ def build_minimal_system_prompt(
     style_guide: str,
     context_rules: str,
     output_format: str,
-    active_levels: str
+    active_level: str
 ) -> str:
     """
     Minimal system prompt (CONTEXT OLMADAN) - Multi-turn conversation için.
@@ -38,7 +38,7 @@ def build_minimal_system_prompt(
         style_guide: Üslup kuralları
         context_rules: Bağlam kuralları
         output_format: Çıktı formatı
-        active_levels: Aktif eğitim kademeleri
+        active_level: Aktif eğitim kademesi
     
     Returns:
         Context OLMADAN system prompt
@@ -51,7 +51,7 @@ def build_minimal_system_prompt(
 
 {output_format}
 
-**Aktif Kademeler:** {active_levels}
+**Aktif Kademe:** {active_level}
 
 🚨 KRİTİK: Sohbet geçmişini GÖREBİLİRSİNİZ ama SADECE EN SON KULLANICI SORUSUNU yanıtlayın!
 - Eski soruları ASLA tekrar yanıtlamayın
@@ -64,7 +64,7 @@ def build_answer_prompt(
     style_guide: str, 
     context_rules: str,
     output_format: str,
-    active_levels: str,
+    active_level: str,
     context: str
 ) -> str:
     """
@@ -75,7 +75,7 @@ def build_answer_prompt(
         style_guide: Üslup kuralları
         context_rules: Bağlam kuralları
         output_format: Çıktı formatı
-        active_levels: Aktif eğitim kademeleri
+        active_level: Aktif eğitim kademesi
         context: Retrieve edilen dokümanlar
     
     Returns:
@@ -87,7 +87,7 @@ def build_answer_prompt(
 
 {style_guide}
 
-**Aktif Kademeler:** {active_levels}
+**Aktif Kademe:** {active_level}
 
 **Bağlam:**
 {context}
